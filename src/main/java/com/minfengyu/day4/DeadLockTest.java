@@ -1,9 +1,26 @@
 package com.minfengyu.day4;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class DeadLockTest {
    private static  Object lock1=new Object();
     private static  Object lock2=new Object();
-
+    private  static Set hasSet=new HashSet();
+    public static void addHashSetThread(){
+        new Thread(()->{
+            int count=0;
+            while (true){
+                try {
+                    hasSet.add("count"+count);
+                    Thread.sleep(10000);
+                    count++;
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     public static void main(String[] args) {
         new Thread(()->{
             synchronized (lock1){
