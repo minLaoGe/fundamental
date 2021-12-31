@@ -1,7 +1,7 @@
 package com.example.seckill;
 
-import com.example.seckill.entity.UserInfoImpl;
 import com.example.seckill.utils.SerializeUtil;
+import org.jasig.cas.client.validation.UserInfoImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +42,8 @@ public class ApplicationTests {
 		String keys = "name";
 		String value = jedis.get(keys);
 		System.out.println(value);
-		UserInfoImpl p = new UserInfoImpl("1", "admin", "超级管理员", "机构Acode", "resjson", "13500010002", "330101199901265452", "机构A名称", "330101", "杭州市");
-		jedis.setex("SSO_testlogin".getBytes(), 60, SerializeUtil.serialize(p));
+		UserInfoImpl p = new UserInfoImpl("7cb12c67fba148b6aacf7cba7f9aa393", "zmc", "zhumincai", "999100", "resjson", "18895356128", "330101199901265452", "机构A名称", "330100", "杭州市");
+		jedis.set("SSO_testlogin".getBytes(),  SerializeUtil.serialize(p));
 		/*byte[] byt = jedis.get("person".getBytes());
 		Object obj = SerializeUtil.unserizlize(byt);
 		if (obj instanceof UserInfoImpl) {
@@ -52,5 +52,7 @@ public class ApplicationTests {
 
 
 	}
+
+
 
 }
