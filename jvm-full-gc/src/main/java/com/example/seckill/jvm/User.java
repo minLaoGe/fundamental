@@ -1,4 +1,4 @@
-package com.jvm;
+package com.example.seckill.jvm;
 
 public class User {
 	

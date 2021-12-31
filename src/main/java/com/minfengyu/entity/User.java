@@ -8,8 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    private Integer age;
-    private String name;
+    private final byte[] a=new byte[23];
+    private Integer age=0;
+    private String name="sdf";
 
 
 }

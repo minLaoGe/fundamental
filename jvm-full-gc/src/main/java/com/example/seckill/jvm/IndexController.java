@@ -1,4 +1,4 @@
-package com.jvm;
+package com.example.seckill.jvm;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
