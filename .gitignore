@@ -1,5 +1,5 @@
 target/
-*.iml
+**/*.iml
 .idea/
 jvm.dump.hwcache/
 java_pid29836.hprof.7n45x.b.ij/

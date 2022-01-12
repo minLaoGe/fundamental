@@ -1,6 +1,6 @@
 package com.example.seckill.jvm;
 
-public class User {
+public class User extends Person {
 	
 	private int id;
 	private String name;
@@ -28,4 +28,7 @@ public class User {
 		this.name = name;
 	}
 
+	public static void main(String[] args) {
+
+	}
 }
