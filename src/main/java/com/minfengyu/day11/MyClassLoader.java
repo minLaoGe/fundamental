@@ -18,7 +18,11 @@ public class MyClassLoader extends ClassLoader {
         ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
         Class<?> aClass = null;
         try {
-            aClass = systemClassLoader.loadClass(name);
+            if (name=="com.minfengyu.Day8.Poller"|| name.endsWith("keyAttachment")){
+
+            }else {
+                aClass = systemClassLoader.loadClass(name);
+            }
         } catch (Exception e) {
             aClass=null;
         }
@@ -48,12 +52,12 @@ public class MyClassLoader extends ClassLoader {
 }
 
 class Test {
-    public static void main(String[] args) throws ClassNotFoundException {
-        MyClassLoader myClassLoader = new MyClassLoader("/Users/minfengyu/development/other");
-        MyClassLoader myClassLoader2 = new MyClassLoader("/Users/minfengyu/development/other");
+    public static void main(String[] args) throws Exception {
+        MyClassLoader myClassLoader = new MyClassLoader("/Users/minfengyu/IdeaProjects/fundamental/target/classes");
         Class<?> aClass = myClassLoader.loadClass("com.minfengyu.Day8.Poller");
-        Class<?> aClass2 = myClassLoader2.loadClass("com.minfengyu.Day8.Poller");
-        System.out.println(aClass.equals(aClass2));
-
+        Object poller =  aClass.newInstance();
+        System.out.println(poller);
+        System.out.println(aClass.getClassLoader());
+        System.out.println(Thread.currentThread().getContextClassLoader());
     }
 }

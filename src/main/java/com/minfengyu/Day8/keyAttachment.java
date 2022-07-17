@@ -1,8 +1,10 @@
 package com.minfengyu.Day8;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class keyAttachment {
     private PollerEvent pollerEvent;
     private Poller poller;
